@@ -1,0 +1,7 @@
+{
+  "name": "ratatouile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
