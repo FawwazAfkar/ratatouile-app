@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  nama = '';
+  constructor(private authService: AuthenticationService, private router: Router) { this.nama = this.authService.nama }
 
-  constructor() {}
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
+  ngOnInit() {
+  }
 
+  logout() {
+    this.authService.logout();
+    this.router.navigateByUrl('/login');
+  }
 }
